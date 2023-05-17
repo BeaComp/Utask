@@ -66,8 +66,9 @@ const darkMode = () => {
 const botaoDarkmode = document.getElementById("radio-btn")
 botaoDarkmode.onclick = darkMode
 
-//Modal do Mobile
 
+
+//Modal do Mobile
 const mostrarModal = () => {
     const modal = document.querySelector(".fundo-modal")
     modal.classList.add("mostrar")
@@ -84,8 +85,25 @@ const esconderModal = () => {
 const fecharModal = document.querySelector(".btnfechar")
 fecharModal.onclick = esconderModal
 
-//API frase do Dia
+//Modal da Nova Task
+const mostrarModalTask = () => {
+    const modalTask = document.querySelector(".novatask")
+    modalTask.classList.add("mostrar")
+}
 
+const abrirModalTask = document.querySelector(".addTask")
+abrirModalTask.onclick = mostrarModalTask
+
+const esconderModalTask = () => {
+    const modal = document.querySelector(".novatask")
+    modal.classList.remove("mostrar")
+}
+
+const fecharModalTask = document.querySelector(".btnfecharTask")
+fecharModalTask.onclick = esconderModalTask
+
+
+//API frase do Dia
 const elementoErro = document.getElementById("erro");
 const elementoErroMobile = document.getElementById("erroMobile");
 const p = document.querySelector("#frase-paragrafo");

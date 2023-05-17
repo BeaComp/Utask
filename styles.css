@@ -149,6 +149,199 @@ header.dark {
     display: none;
 }
 
+.headerFazer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerFazer button>span {
+    color: #226ED8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Material Icons';
+    font-weight: 400;
+    cursor: pointer;
+}
+
+
+.addTask {
+    box-sizing: border-box;
+
+    width: 30px;
+    height: 30px;
+    left: 423px;
+    top: 263px;
+    margin: auto 0px auto 0px;
+    background-color: #FFFFFF;
+    border: 2px solid #226ED8;
+    border-radius: 40px;
+}
+
+.novatask {
+    display: none;
+}
+
+.novatask.mostrar {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    display: flex;
+}
+
+.janelaTask {
+    width: 474px;
+    height: 421px;
+    left: 403px;
+    top: 150px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    z-index: 100;
+}
+
+.headerTask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerTask button.btnfecharTask {
+    color: #226ED8;
+    justify-content: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Material Icons';
+    font-weight: 400;
+
+    box-sizing: border-box;
+
+    width: 30px;
+    height: 30px;
+    left: 297px;
+    top: 308px;
+
+    background: #FFFFFF;
+    border: 2px solid #226ED8;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.janelaTask button#newTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    gap: 10px;
+
+    margin-top: 40px;
+    width: 374px;
+    height: 41px;
+
+    background: linear-gradient(90.35deg, #4890F5 0%, #226ED8 99.7%);
+    border-radius: 20px;
+    border: #FFFFFF;
+    color: #FFFFFF;
+    font-family: var(--font);
+    font-size: 14px;
+    cursor: pointer;
+    
+}
+
+.janelaTask h1 {
+    font-family: var(--font);
+    font-size: 20px;
+    color: #3867D6;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-top: 30px;
+    
+}
+
+.janelaTask .linha {
+    width: 110px;
+    height: 3px; 
+    background: #3867D6;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-left: 119px;
+    margin-right: 120.449px;
+}
+
+.janelaTask h2 {
+    font-family: var(--font);
+    font-size: 12px;
+    color: #141414;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.janelaTask input#titulo {
+    width: 374px;
+    height: 40px;
+    left: 453px;
+    top: 276px;
+
+    background: #EEEEEE;
+    border-radius: 10px;
+    border: #FFFFFF;
+}
+
+.janelaTask input:focus-visible {
+    outline: #FFFFFF
+}
+
+.janelaTask input#inputdesc {
+    width: 374px;
+    height: 90px;
+    left: 453px;
+    top: 360px;
+
+    background: #EEEEEE;
+    border-radius: 10px;
+    border: #FFFFFF;
+}
+
+
+
+.tarefas {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font);
+    font-size: 20px;
+    top: 263px;
+}
+
+.tasks {
+    background-color: #EEEEEE;
+
+    width: 320px;
+    height: 337px;
+    left: 160px;
+    top: 301px;
+    border-radius: 10px;
+}
+
 .footer {
     background-color: var(--background-footer);
     color: #ffff;
@@ -237,10 +430,10 @@ footer a {
 
     .modal {
         width: 315px;
-      
+
         margin: auto;
 
-        
+
         background: #ffffff;
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
@@ -302,9 +495,11 @@ footer a {
     .modal button>span {
         color: #226ED8;
 
-        font-style: normal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Material Icons';
         font-weight: 400;
-
     }
 
     .cabecalho {

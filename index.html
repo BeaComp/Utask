@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
     <title>Utask 3.0</title>
@@ -19,7 +20,9 @@
 <body>
     <header>
         <div><img id="logo-header" src="img/[Imagem] Logo branca.svg" alt="Logo UNECT"></div>
-        <div><h1>uTask 3.0</h1></div>
+        <div>
+            <h1>uTask 3.0</h1>
+        </div>
         <div id="radio-btn">
             <div id="radio-inner">
                 <img id="image" src="img/light_mode.svg" alt="Sol">
@@ -29,51 +32,115 @@
 
     <main>
 
+        <!-- Frase do dia no Web -->
         <section id="btnfrase" class="frasedodia">
             <img id="imageIcone" src="img/Ícone.svg" alt="Lampada" />
             <div class="frase">
-              <h1 >Frase do dia</h1>
-              <p id="frase-paragrafo" >
+                <h1>Frase do dia</h1>
+                <p id="frase-paragrafo">
                 <p id="erro"></p>
-              </p>
+                </p>
             </div>
         </section>
 
+        <!-- Frase do dia no Mobile -->
         <section id="btnfraseMobile" class="fraseMobile">
             <img id="imageIconeMobile" src="img/Ícone.svg" alt="Lampada" />
             <div class="frase">
-                <h1 >Frase do dia</h1>
+                <h1>Frase do dia</h1>
             </div>
-
-            
         </section>
 
+        <!-- Modal da Frase do dia no Mobile -->
         <section id="btnModal" class="fundo-modal">
             <div id="modal" class="modal">
                 <div class="cabecalho">
                     <img id="imageIconeModal" src="img/Ícone.svg" alt="Lampada" />
-                    <h1 >Frase do dia</h1>
+                    <h1>Frase do dia</h1>
                     <button class="btnfechar"><span class="material-icons-outlined">
-                        x</span>
+                            &#xe5cd;
+                        </span>
                     </button>
                 </div>
-                
-                <p id="frase-paragrafoMobile" >
-                    <p id="erroMobile"></p>
+
+                <p id="frase-paragrafoMobile">
+                <p id="erroMobile"></p>
                 </p>
-                
+
             </div>
-            
         </section>
-       
+
+        <!-- Modal Criar nova Task-->
+        <section class="novatask" id="fundo-janelaadd">
+            <div class="janelaTask">
+                <form class="criartask">
+                    <div class="headerTask">
+                        <h1>Nova Task</h1>
+                        <button class="btnfecharTask"><span class="material-icons-outlined">
+                                &#xe5cd;
+                            </span>
+                        </button>
+                    </div>
+                    <div class="linha"></div>
+                    <div>
+                        <h2>Título *</h2>
+                        <input id="titulo" type="text" />
+                    </div>
+
+                    <div>
+                        <h2>Descrição</h2>
+                        <input id="inputdesc" class="descricao" type="text"></input>
+                    </div>
+
+                    <button id="newTask">Criar task</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="meio">
+
+            <div class="meio carrossel">
+
+                <div class="tarefas">
+                    <div class="container">
+                        <div class="headerFazer">
+                            <p>A fazer</p>
+                            <button class="addTask"><span class="material-icons-outlined">
+                                    &#xe145;
+                                </span>
+                        </div>
+                        <div id="afazer" class="tasks">teste</div>
+                    </div>
+
+                    <div class="container">
+                        <p>Em andamento</p>
+                        <div id="andamento" class="tasks">teste</div>
+                    </div>
+
+                    <div class="container">
+                        <p>Feito</p>
+                        <div id="feito" class="tasks">teste</div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
 
     </main>
 
     <footer class="footer">
-        <div> <p>© Processo de Trainee <a href="https://unect.com.br/" target="_blank"> Unect Jr.</a> 2022.1</p></div>
-        <div> 
+        <div>
+            <p>© Processo de Trainee <a href="https://unect.com.br/" target="_blank"> Unect Jr.</a> 2022.1</p>
+        </div>
+        <div>
             <p>Feito com <a href=""><img src="img/favorite.svg" alt="Coração"></a> por <strong> Beatriz Cristina de
-            Faria</strong><p>
+                    Faria</strong>
+            <p>
         </div>
     </footer>
 
