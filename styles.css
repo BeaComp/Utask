@@ -398,7 +398,7 @@ header.dark {
     display: none;
 }
 
-/* .listaTarefas div>button.excluiTask {
+.listaTarefas div>button.excluiTask.mostrar {
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -416,14 +416,14 @@ header.dark {
     font-size: 12px;
 }
 
-.listaTarefas div>button.excluiTask>span {
+.listaTarefas div>button.excluiTask.mostrar>span {
     font-family: 'Material Icons';
     font-size: 16px;
     display: flex;
     align-items: center;
 
     color: #DF0000;
-} */
+}
 
 .listaTarefas span>button.expand-Ler {
     font-family: 'Material Icons';
@@ -459,8 +459,12 @@ header.dark {
     word-break: break-all;
 }
 
+.listaTarefas .parte2>button.move.remove{
+    display: none;
+}
 
-.listaTarefas button.move {
+
+.listaTarefas .parte2>button.move.mostrar {
     width: 20px;
     height: 20px;
     border: #FFFFFF;
@@ -471,7 +475,7 @@ header.dark {
 }
 
 
-.listaTarefas .parte2>button.move>span {
+.listaTarefas .parte2>button.move.mostrar>span {
     width: 16px;
     height: 16px;
     font-family: 'Material Icons';
@@ -519,7 +523,7 @@ header.dark {
     display: none;
 }
 
-/* .listaTarefas span.itemDesc {
+.listaTarefas span.itemDesc {
     font-family: var(--font);
     font-weight: 300;
     font-size: 12px;
@@ -527,9 +531,13 @@ header.dark {
     align-items: center;
     margin-left: 12px;
     color: #141414;
-} */
+}
 
 .listaTarefas span.Desc {
+    display: none;
+}
+
+/* .listaTarefas span.Desc {
     font-family: var(--font);
     font-weight: 300;
     font-size: 12px;
@@ -538,7 +546,7 @@ header.dark {
     margin-left: 12px;
     color: #002D6C;
     margin-bottom: 6px;
-}
+} */
 
 div::-webkit-scrollbar {
     width: 10px;

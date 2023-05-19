@@ -85,15 +85,13 @@ const fecharModal = document.querySelector(".btnfechar")
 fecharModal.onclick = esconderModal
 
 //Modal da Nova Task
-const mostrarModalTask = () => {
+const abrirModalTask = document.querySelector(".addTask");
+abrirModalTask.addEventListener('click', (e) => {
     const modalTask = document.querySelector(".novatask")
     modalTask.classList.add("mostrar");
-}
+});
 
-const abrirModalTask = document.querySelector(".addTask")
-abrirModalTask.onclick = mostrarModalTask
-
-
+//Fechar modal da Nova Task
 const fecharModalTask = document.querySelector(".btnfecharTask");
 fecharModalTask.addEventListener('click', (e) => {
     e.preventDefault();
@@ -140,14 +138,15 @@ let inputTitulo = document.querySelector('#titulo');
 let inputDescricao = document.querySelector('#inputdesc');
 let btnnewTask = document.querySelector('#newTask');
 const qtdIdsDisponiveis = Number.MAX_VALUE;
-let listaTarefas = document.querySelector('.listaTarefas')
+let listaTarefas = document.querySelector('.listaTarefas');
+let tasks = document.querySelectorAll('.tasks');
 
 btnnewTask.addEventListener('click', (e) => {
     e.preventDefault();
 
-    if (inputTitulo.value === '' & inputDescricao.value === '') {
+    if (inputTitulo.value === '' || inputDescricao.value === '') {
         alert("Preencha todos os campos!");
-       
+
     }
     else {
         let tarefa = {
@@ -156,6 +155,7 @@ btnnewTask.addEventListener('click', (e) => {
             id: gerarId(),
         }
         adicionarTarefa(tarefa);
+
 
         console.log(tarefa)
     }
@@ -166,15 +166,20 @@ function gerarId() {
 
 }
 
+
+
 function adicionarTarefa(tarefa) {
     let li = criarTagLI(tarefa);
-    listaTarefas.appendChild(li);  
-    inputTitulo.value = '';  
+    listaTarefas.appendChild(li);
+    inputTitulo.value = '';
     inputDescricao.value = '';
+
 }
 
 
-//Terminar essa Funcao
+
+
+//Função que cria a estrutura do HTML para cada tarefa
 function criarTagLI(tarefa) {
 
     let li = document.createElement('li');
@@ -182,7 +187,7 @@ function criarTagLI(tarefa) {
 
     let divParte1 = document.createElement('div');
     divParte1.classList.add('parte1');
-   
+
     let p = document.createElement('p');
     p.classList.add('TitleTask');
     p.innerHTML = tarefa.titulo;
@@ -190,6 +195,7 @@ function criarTagLI(tarefa) {
     let btn_tres_pontinhos = document.createElement('button');
     btn_tres_pontinhos.classList.add('moveTask');
     btn_tres_pontinhos.innerHTML = '<span class="material-icons-outlined">more_vert</span>';
+
 
 
     let divParte2 = document.createElement('div');
@@ -204,7 +210,12 @@ function criarTagLI(tarefa) {
     p_Descricao.classList.add('paragradoDes');
     p_Descricao.innerHTML = tarefa.descricao;
 
-   
+    //Botao Excluir
+    let btn_Excluir_Task = document.createElement('button');
+    btn_Excluir_Task.classList.add('excluiTask');
+    btn_Excluir_Task.innerHTML = '<span class="material-icons-outlined">&#xe92e</span> Excluir';
+    // btn_Excluir_Task.setAttribute('click', excluir(' + tarefa.id + '));
+
     //Botao Esconde a Task
     let spanEsconderDesc = document.createElement('span');
     spanEsconderDesc.classList.add('Desc');
@@ -213,16 +224,8 @@ function criarTagLI(tarefa) {
     //Botao move a Task
     let btnMoveTask = document.createElement('button');
     btnMoveTask.classList.add('move');
+    btnMoveTask.classList.add('mostrar');
     btnMoveTask.innerHTML = '<span class="material-icons-outlined">navigate_next</span>';
-
-
-    
-    //Botao Excluir
-    let btn_Excluir_Task = document.createElement('button');
-    btn_Excluir_Task.classList.add('excluiTask');
-    btn_Excluir_Task.innerHTML = '<span class="material-icons-outlined">&#xe92e</span> Excluir';
-    // btnExcluir.setAttribute('onclick', 'excluir('+tarefa.id+')');
-
 
 
     li.appendChild(divParte1);
@@ -237,13 +240,48 @@ function criarTagLI(tarefa) {
 
     li.appendChild(p_Descricao);
 
+
     return li;
+}
+
+const itensTarefas = listaTarefas.querySelectorAll('li');
+itensTarefas.forEach(tarefa => {
+    tarefa.addEventListener('click', functions);
+});
+
+
+function functions(event) {
+
+    const item = event.target;
+
+    const mostrarBtnExcluir = () => {
+        let view = item.querySelectorAll('.excluiTask');
+        let move = item.querySelectorAll('.move');
+
+        if (view.classList.contains("mostrar")) {
+            item.parentElement.lastChild.classList.toggle('visible');
+
+        }
+
+        var btnMoveTask = item.querySelectorAll('.moveTask');
+        btnMoveTask.onclick = mostrarBtnExcluir;
+
+    }
 }
 
 
 
-
-
+function excluir(idTarefa) {
+    let confirmacao = window.confirm('Tem certeza que deseja excluir?');
+    if (confirmacao) {
+        let li = document.getElementById('' + idTarefa + '');
+        if (li) {
+            listaTarefas.removeChild(li);
+        } else {
+            alert('Elemento HTML não encontrado!');
+        }
+    }
+}
 
 
 
