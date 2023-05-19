@@ -1,6 +1,5 @@
 
 // Dark Mode
-
 const darkMode = () => {
     const botaoInterno = document.getElementById("radio-inner")
     var img = document.querySelector("#image")
@@ -88,19 +87,21 @@ fecharModal.onclick = esconderModal
 //Modal da Nova Task
 const mostrarModalTask = () => {
     const modalTask = document.querySelector(".novatask")
-    modalTask.classList.add("mostrar")
+    modalTask.classList.add("mostrar");
 }
 
 const abrirModalTask = document.querySelector(".addTask")
 abrirModalTask.onclick = mostrarModalTask
 
-const esconderModalTask = () => {
-    const modal = document.querySelector(".novatask")
-    modal.classList.remove("mostrar")
-}
 
-const fecharModalTask = document.querySelector(".btnfecharTask")
-fecharModalTask.onclick = esconderModalTask
+const fecharModalTask = document.querySelector(".btnfecharTask");
+fecharModalTask.addEventListener('click', (e) => {
+    e.preventDefault();
+    const modal = document.querySelector(".novatask");
+    modal.classList.remove("mostrar");
+});
+
+
 
 
 //API frase do Dia
@@ -108,7 +109,6 @@ const elementoErro = document.getElementById("erro");
 const elementoErroMobile = document.getElementById("erroMobile");
 const p = document.querySelector("#frase-paragrafo");
 const pMobile = document.querySelector("#frase-paragrafoMobile");
-
 
 
 fetch("https://api.adviceslip.com/advice")
@@ -133,6 +133,116 @@ fetch("https://api.adviceslip.com/advice")
         elementoErro.innerText = "Ocorreu um erro ao obter a frase aleatória.";
         elementoErroMobile.innerText = "Ocorreu um erro ao obter a frase aleatória.";
     });
+
+
+//Adicionar Tasks
+let inputTitulo = document.querySelector('#titulo');
+let inputDescricao = document.querySelector('#inputdesc');
+let btnnewTask = document.querySelector('#newTask');
+const qtdIdsDisponiveis = Number.MAX_VALUE;
+let listaTarefas = document.querySelector('.listaTarefas')
+
+btnnewTask.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (inputTitulo.value === '' & inputDescricao.value === '') {
+        alert("Preencha todos os campos!");
+       
+    }
+    else {
+        let tarefa = {
+            titulo: inputTitulo.value,
+            descricao: inputDescricao.value,
+            id: gerarId(),
+        }
+        adicionarTarefa(tarefa);
+
+        console.log(tarefa)
+    }
+});
+
+function gerarId() {
+    return Math.floor(Math.random() * 10);
+
+}
+
+function adicionarTarefa(tarefa) {
+    let li = criarTagLI(tarefa);
+    listaTarefas.appendChild(li);  
+    inputTitulo.value = '';  
+    inputDescricao.value = '';
+}
+
+
+//Terminar essa Funcao
+function criarTagLI(tarefa) {
+
+    let li = document.createElement('li');
+    li.id = tarefa.id;
+
+    let divParte1 = document.createElement('div');
+    divParte1.classList.add('parte1');
+   
+    let p = document.createElement('p');
+    p.classList.add('TitleTask');
+    p.innerHTML = tarefa.titulo;
+
+    let btn_tres_pontinhos = document.createElement('button');
+    btn_tres_pontinhos.classList.add('moveTask');
+    btn_tres_pontinhos.innerHTML = '<span class="material-icons-outlined">more_vert</span>';
+
+
+    let divParte2 = document.createElement('div');
+    divParte2.classList.add('parte2');
+
+    //Botao Expand Task
+    let spanLerDesc = document.createElement('span');
+    spanLerDesc.classList.add('itemDesc');
+    spanLerDesc.innerHTML = 'Ler descrição <button class="expand-Ler"><span class="material-icons-outlined">expand_more</span></button>';
+
+    let p_Descricao = document.createElement('p');
+    p_Descricao.classList.add('paragradoDes');
+    p_Descricao.innerHTML = tarefa.descricao;
+
+   
+    //Botao Esconde a Task
+    let spanEsconderDesc = document.createElement('span');
+    spanEsconderDesc.classList.add('Desc');
+    spanEsconderDesc.innerHTML = 'Esconder descrição <button class="expand-Desc"><span class="material-icons-outlined">expand_less</span></button>';
+
+    //Botao move a Task
+    let btnMoveTask = document.createElement('button');
+    btnMoveTask.classList.add('move');
+    btnMoveTask.innerHTML = '<span class="material-icons-outlined">navigate_next</span>';
+
+
+    
+    //Botao Excluir
+    let btn_Excluir_Task = document.createElement('button');
+    btn_Excluir_Task.classList.add('excluiTask');
+    btn_Excluir_Task.innerHTML = '<span class="material-icons-outlined">&#xe92e</span> Excluir';
+    // btnExcluir.setAttribute('onclick', 'excluir('+tarefa.id+')');
+
+
+
+    li.appendChild(divParte1);
+    divParte1.appendChild(p);
+    divParte1.appendChild(btn_tres_pontinhos);
+
+    li.appendChild(divParte2);
+    divParte2.appendChild(spanLerDesc);
+    divParte2.appendChild(btn_Excluir_Task);
+    divParte2.appendChild(spanEsconderDesc);
+    divParte2.appendChild(btnMoveTask);
+
+    li.appendChild(p_Descricao);
+
+    return li;
+}
+
+
+
+
 
 
 
