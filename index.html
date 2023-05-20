@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+   
 
     <title>Utask 3.0</title>
 </head>
@@ -76,7 +77,8 @@
                 <form class="criartask">
                     <div class="headerTask">
                         <h1>Nova Task</h1>
-                        <button class="btnfecharTask"><span class="material-icons-outlined">
+                        <button class="btnfecharTask">
+                            <span class="material-icons-outlined">
                                 &#xe5cd;
                             </span>
                         </button>
@@ -105,64 +107,27 @@
                     <div class="container">
                         <div class="headerFazer">
                             <p>A fazer</p>
-                            <button class="addTask"><span class="material-icons-outlined">
+                            <button id="addTask" class="addTask">
+                                <span class="material-icons-outlined">
                                     &#xe145;
                                 </span>
                         </div>
                         <div id="afazer" class="tasks">
                             <div class="frame">
-                                <ul class="listaTarefas">
-                                    <!-- <li id="">
-                                        <div class="parte1">
-                                            <p class="TitleTask"></p>
-                                            <button class="moveTask"><span class="material-icons-outlined">
-                                                    more_vert
-                                                </span></button>
-                                        </div>
+                                <ul class="listaTarefas" id="todoList">
 
-                                        <div class="parte2">
-                                            <span id="LerDesc" class="itemDesc">Ler descrição <button
-                                                    class="expand-Ler"><span class="material-icons-outlined">
-                                                        expand_more
-                                                    </span>
-                                            </button>
-                                            </span>
-
-
-                                            <button id="LerDesc" class="excluiTask"><span
-                                                    class="material-icons-outlined">
-                                                    &#xe92e;
-                                                </span> Excluir</button>
-
-                                            <span class="Desc">Esconder descrição <button class="expand-Desc"><span
-                                                        class="material-icons-outlined">
-                                                        expand_less
-                                                    </span></button>
-                                            </span>
-
-
-
-                                            <button class="move"><span
-                                                    class="material-icons-outlined">navigate_next</span></button>
-
-                                        </div>
-
-                                        <p class="paragradoDes">
-                                        </p>
-
-                                    </li> -->
                                 </ul>
                             </div>
-
-
                         </div>
                     </div>
 
                     <div class="container">
                         <p>Em andamento</p>
                         <div id="andamento" class="tasks">
-                            <div class="andamentoTask">
+                            <div class="frame">
+                                <ul class="listaTarefas" id="doingList">
 
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -170,8 +135,10 @@
                     <div class="container">
                         <p>Feito</p>
                         <div id="feito" class="tasks">
-                            <div class="feitoTask">
+                            <div class="frame">
+                                <ul class="listaTarefas" id="finishedList">
 
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -199,6 +166,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="handleTask.js"></script>
 </body>
 
 </html>
