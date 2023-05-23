@@ -30,6 +30,7 @@ main {
     margin-bottom: 20px;
     margin-left: 5px;
     margin-right: 5px;
+    
 }
 
 header {
@@ -662,10 +663,14 @@ footer a {
 
 @media screen and (max-width: 702px) {
 
-    .tarefas.mobile {
-        margin-bottom: 20px;
-        margin-left: 5px;
-        margin-right: 5px;
+    .tarefas {
+        width: 287px;
+        margin: auto;
+    }
+
+    .frame {
+        width: 253px;
+        border-radius: 10px;
     }
 
     .frasedodia {
