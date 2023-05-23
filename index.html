@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-   
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
     <title>Utask 3.0</title>
 </head>
@@ -33,124 +34,127 @@
 
     <main>
 
-        <!-- Frase do dia no Web -->
-        <section id="btnfrase" class="frasedodia">
-            <img id="imageIcone" src="img/Ícone.svg" alt="Lampada" />
-            <div class="frase">
-                <h1>Frase do dia</h1>
-                <p id="frase-paragrafo">
-                <p id="erro"></p>
-                </p>
-            </div>
-        </section>
+        <div class="content">
 
-        <!-- Frase do dia no Mobile -->
-        <section id="btnfraseMobile" class="fraseMobile">
-            <img id="imageIconeMobile" src="img/Ícone.svg" alt="Lampada" />
-            <div class="frase">
-                <h1>Frase do dia</h1>
-            </div>
-        </section>
 
-        <!-- Modal da Frase do dia no Mobile -->
-        <section id="btnModal" class="fundo-modal">
-            <div id="modal" class="modal">
-                <div class="cabecalho">
-                    <img id="imageIconeModal" src="img/Ícone.svg" alt="Lampada" />
+            <!-- Frase do dia no Web -->
+            <section id="btnfrase" class="frasedodia">
+                <img id="imageIcone" src="img/Ícone.svg" alt="Lampada" />
+                <div class="frase">
                     <h1>Frase do dia</h1>
-                    <button class="btnfechar"><span class="material-icons-outlined">
-                            &#xe5cd;
-                        </span>
-                    </button>
+                    <p id="frase-paragrafo">
+                    <p id="erro"></p>
+                    </p>
                 </div>
+            </section>
 
-                <p id="frase-paragrafoMobile">
-                <p id="erroMobile"></p>
-                </p>
+            <!-- Frase do dia no Mobile -->
+            <section id="btnfraseMobile" class="fraseMobile">
+                <img id="imageIconeMobile" src="img/Ícone.svg" alt="Lampada" />
+                <div class="frase">
+                    <h1>Frase do dia</h1>
+                </div>
+            </section>
 
-            </div>
-        </section>
-
-        <!-- Modal Criar nova Task-->
-        <section class="novatask" id="fundo-janelaadd">
-            <div class="janelaTask">
-                <form class="criartask">
-                    <div class="headerTask">
-                        <h1>Nova Task</h1>
-                        <button class="btnfecharTask">
-                            <span class="material-icons-outlined">
+            <!-- Modal da Frase do dia no Mobile -->
+            <section id="btnModal" class="fundo-modal">
+                <div id="modal" class="modal">
+                    <div class="cabecalho">
+                        <img id="imageIconeModal" src="img/Ícone.svg" alt="Lampada" />
+                        <h1>Frase do dia</h1>
+                        <button class="btnfechar"><span class="material-icons-outlined">
                                 &#xe5cd;
                             </span>
                         </button>
                     </div>
-                    <div class="linha"></div>
-                    <div>
-                        <h2>Título *</h2>
-                        <input id="titulo" type="text" />
-                    </div>
 
-                    <div>
-                        <h2>Descrição</h2>
-                        <textarea id="inputdesc" class="descricao"></textarea>
-                    </div>
+                    <p id="frase-paragrafoMobile">
+                    <p id="erroMobile"></p>
+                    </p>
 
-                    <button id="newTask" type="submit">Criar task</button>
-                </form>
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <section class="meio">
-
-            <div class="meio carrossel">
-
-                <div class="tarefas">
-                    <div class="container">
-                        <div class="headerFazer">
-                            <p>A fazer</p>
-                            <button id="addTask" class="addTask">
+            <!-- Modal Criar nova Task-->
+            <section class="novatask" id="fundo-janelaadd">
+                <div class="janelaTask">
+                    <form class="criartask">
+                        <div class="headerTask">
+                            <h1>Nova Task</h1>
+                            <button class="btnfecharTask">
                                 <span class="material-icons-outlined">
-                                    &#xe145;
+                                    &#xe5cd;
                                 </span>
+                            </button>
                         </div>
-                        <div id="afazer" class="tasks">
-                            <div class="frame">
-                                <ul class="listaTarefas" id="todoList">
+                        <div class="linha"></div>
+                        <div>
+                            <h2>Título *</h2>
+                            <input id="titulo" type="text" />
+                        </div>
 
-                                </ul>
+                        <div>
+                            <h2>Descrição</h2>
+                            <textarea id="inputdesc" class="descricao"></textarea>
+                        </div>
+
+                        <button id="newTask">Criar task</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="meio">
+
+                <div class="meio-carrossel">
+
+                    <div class="tarefas">
+                        <div class="container">
+                            <div class="headerFazer">
+                                <p>A fazer</p>
+                                <button id="addTask" class="addTask">
+                                    <span class="material-icons-outlined">
+                                        &#xe145;
+                                    </span>
+                            </div>
+                            <div id="afazer" class="tasks">
+                                <div class="frame">
+                                    <ul class="listaTarefas" id="todoList">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <p>Em andamento</p>
+                            <div id="andamento" class="tasks">
+                                <div class="frame">
+                                    <ul class="listaTarefas" id="doingList">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <p>Feito</p>
+                            <div id="feito" class="tasks">
+                                <div class="frame">
+                                    <ul class="listaTarefas" id="finishedList">
+
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="container">
-                        <p>Em andamento</p>
-                        <div id="andamento" class="tasks">
-                            <div class="frame">
-                                <ul class="listaTarefas" id="doingList">
 
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="container">
-                        <p>Feito</p>
-                        <div id="feito" class="tasks">
-                            <div class="frame">
-                                <ul class="listaTarefas" id="finishedList">
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
 
-
-            </div>
-
-
-        </section>
-
+            </section>
+        </div>
 
     </main>
 
@@ -165,8 +169,15 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="handleTask.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/handleTask.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="./js/slick.min.js"></script>
+    
 </body>
 
 </html>

@@ -15,9 +15,21 @@ body {
 }
 
 main {
+    width: 100%;
+    height: calc(100vh - 130px);
+    overflow: auto;
+}
+.content{
     min-width: 300px;
     max-width: 1180px;
     margin: auto;
+    height: auto;
+    width: 100%;
+}
+.container{
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 header {
@@ -392,13 +404,15 @@ header.dark {
 }
 
 
+
+
 /* Button Delete Task */
 
 .listaTarefas div>button.excluiTask {
     display: none;
 }
 
-.listaTarefas div>button.excluiTask.mostrar {
+.listaTarefas .showDeleted div>button.excluiTask{
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -414,9 +428,11 @@ header.dark {
     font-family: var(--font);
     font-weight: 400;
     font-size: 12px;
+    position: absolute;
+    right: 0;
 }
 
-.listaTarefas div>button.excluiTask.mostrar>span {
+.listaTarefas .showDeleted div>button.excluiTask > span {
     font-family: 'Material Icons';
     font-size: 16px;
     display: flex;
@@ -444,6 +460,10 @@ header.dark {
 }
 
 .listaTarefas p.paragradoDes {
+    display: none;
+}
+
+.listaTarefas p.paragradoDes.show {
     display: flex;
     font-size: 12px;
     font-style: normal;
@@ -459,23 +479,24 @@ header.dark {
     word-break: break-all;
 }
 
-.listaTarefas .parte2>button.move.remove{
+.listaTarefas .parte2> button.move.remove{
     display: none;
 }
 
 
-.listaTarefas .parte2>button.move.mostrar {
+.listaTarefas .parte2>button.move {
     width: 20px;
     height: 20px;
     border: #FFFFFF;
     background: #226ED8;
+
     border-radius: 20px;
     margin-right: 14px;
     padding: 1px;
 }
 
 
-.listaTarefas .parte2>button.move.mostrar>span {
+.listaTarefas .parte2>button.move>span {
     width: 16px;
     height: 16px;
     font-family: 'Material Icons';
@@ -488,7 +509,36 @@ header.dark {
     cursor: pointer;
 }
 
-.listaTarefas span>button.expand-Desc {
+
+.listaTarefas  div>button.retorna {
+    display: none;
+}
+
+.listaTarefas div.parte2 > button.retorna.show {
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid #226ED8;
+    border-radius: 20px;
+    padding: 1px;
+    margin-left: 103px;
+}
+
+
+.listaTarefas  div.parte2 > button.retorna.show > span {
+    width: 16px;
+    height: 16px;
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #226ED8;
+    display: flex;
+    cursor: pointer;
+}
+
+
+.listaTarefas .parte2 span.Desc.showDesc > button.expand-Desc {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
@@ -515,11 +565,13 @@ header.dark {
 .listaTarefas div.parte2 {
     display: flex;
     justify-content: space-between;
+    height: fit-content;
 }
 
 
 /* Ao clicar em Ler, Some essa */
-.listaTarefas span.itemDesc {
+
+.listaTarefas span.itemDesc.some {
     display: none;
 }
 
@@ -533,11 +585,12 @@ header.dark {
     color: #141414;
 }
 
+
 .listaTarefas span.Desc {
     display: none;
 }
 
-/* .listaTarefas span.Desc {
+.listaTarefas span.Desc.showDesc {
     font-family: var(--font);
     font-weight: 300;
     font-size: 12px;
@@ -546,7 +599,7 @@ header.dark {
     margin-left: 12px;
     color: #002D6C;
     margin-bottom: 6px;
-} */
+}
 
 div::-webkit-scrollbar {
     width: 10px;
@@ -588,8 +641,7 @@ div::-webkit-scrollbar-thumb {
     font-family: var(--font);
     font-size: 14px;
 
-    position: absolute;
-    bottom: 0;
+    position: sticky;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -609,6 +661,12 @@ footer a {
 
 
 @media screen and (max-width: 702px) {
+
+    .tarefas.mobile {
+        margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 
     .frasedodia {
         display: none;
