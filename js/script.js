@@ -110,28 +110,28 @@ const p = document.querySelector("#frase-paragrafo");
 const pMobile = document.querySelector("#frase-paragrafoMobile");
 
 
-// fetch("https://api.adviceslip.com/advice")
-//     .then(response => response.json())
-//     .then(data => {
-//         const fraseOriginal = data.slip.advice;
-//         const url = `https://api.mymemory.translated.net/get?q=${fraseOriginal}&langpair=en|pt&key=${'5be2f48704466091a687'}`;
+fetch("https://api.adviceslip.com/advice")
+    .then(response => response.json())
+    .then(data => {
+        const fraseOriginal = data.slip.advice;
+        const url = `https://api.mymemory.translated.net/get?q=${fraseOriginal}&langpair=en|pt&key=${'5be2f48704466091a687'}`;
 
-//         fetch(url)
-//             .then(response => response.json())
-//             .then(data => {
-//                 const fraseTraduzida = data.responseData.translatedText;
-//                 p.innerText = fraseTraduzida;
-//                 pMobile.innerText = p.innerText = fraseTraduzida;
-//             })
-//             .catch(error => {
-//                 elementoErro.innerText = "Ocorreu um erro ao traduzir a frase aleatória.";
-//                 elementoErroMobile.innerText = "Ocorreu um erro ao traduzir a frase aleatória.";
-//             });
-//     })
-//     .catch(error => {
-//         elementoErro.innerText = "Ocorreu um erro ao obter a frase aleatória.";
-//         elementoErroMobile.innerText = "Ocorreu um erro ao obter a frase aleatória.";
-//     });
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const fraseTraduzida = data.responseData.translatedText;
+                p.innerText = fraseTraduzida;
+                pMobile.innerText = p.innerText = fraseTraduzida;
+            })
+            .catch(error => {
+                elementoErro.innerText = "Ocorreu um erro ao traduzir a frase aleatória.";
+                elementoErroMobile.innerText = "Ocorreu um erro ao traduzir a frase aleatória.";
+            });
+    })
+    .catch(error => {
+        elementoErro.innerText = "Ocorreu um erro ao obter a frase aleatória.";
+        elementoErroMobile.innerText = "Ocorreu um erro ao obter a frase aleatória.";
+    });
 
 
 
