@@ -19,18 +19,20 @@ main {
     height: calc(100vh - 130px);
     overflow: auto;
 }
-.content{
+
+.content {
     min-width: 300px;
     max-width: 1180px;
     margin: auto;
     height: auto;
     width: 100%;
 }
-.container{
+
+.container {
     margin-bottom: 20px;
     margin-left: 5px;
     margin-right: 5px;
-    
+
 }
 
 header {
@@ -226,6 +228,16 @@ header.dark {
     z-index: 100;
 }
 
+.tituloTask {
+    width: 374px;
+    height: 64px;
+}
+
+.descricaoTask {
+    width: 374px;
+    height: 114px;
+}
+
 .headerTask {
     display: flex;
     justify-content: space-between;
@@ -413,7 +425,7 @@ header.dark {
     display: none;
 }
 
-.listaTarefas .showDeleted div>button.excluiTask{
+.listaTarefas .showDeleted div>button.excluiTask {
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -433,7 +445,7 @@ header.dark {
     right: 0;
 }
 
-.listaTarefas .showDeleted div>button.excluiTask > span {
+.listaTarefas .showDeleted div>button.excluiTask>span {
     font-family: 'Material Icons';
     font-size: 16px;
     display: flex;
@@ -480,7 +492,7 @@ header.dark {
     word-break: break-all;
 }
 
-.listaTarefas .parte2> button.move.remove{
+.listaTarefas .parte2>button.move.remove {
     display: none;
 }
 
@@ -511,11 +523,11 @@ header.dark {
 }
 
 
-.listaTarefas  div>button.retorna {
+.listaTarefas div>button.retorna {
     display: none;
 }
 
-.listaTarefas div.parte2 > button.retorna.show {
+.listaTarefas div.parte2>button.retorna.show {
     width: 20px;
     height: 20px;
     background: #FFFFFF;
@@ -526,7 +538,7 @@ header.dark {
 }
 
 
-.listaTarefas  div.parte2 > button.retorna.show > span {
+.listaTarefas div.parte2>button.retorna.show>span {
     width: 16px;
     height: 16px;
     font-family: 'Material Icons';
@@ -539,7 +551,7 @@ header.dark {
 }
 
 
-.listaTarefas .parte2 span.Desc.showDesc > button.expand-Desc {
+.listaTarefas .parte2 span.Desc.showDesc>button.expand-Desc {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
@@ -822,10 +834,210 @@ footer a {
     }
 }
 
+@media screen and (max-width:1021px) {
+    .tarefas {
+        width: 287px;
+        margin: auto;
+    }
+
+    .frame {
+        width: 253px;
+        border-radius: 10px;
+    }
+
+    .frasedodia {
+        display: none;
+    }
+
+    .footer {
+        width: 50%;
+        display: inline-block;
+        text-align: left;
+        padding: 2px 0px 0px 0px;
+
+
+    }
+
+    .footer p {
+        text-align: left;
+        margin: 0px;
+        padding: 1px 17px;
+        font-size: 11px;
+
+    }
+
+    .fraseMobile {
+        width: 287px;
+        height: 60px;
+
+        position: relative;
+        padding: 0;
+        background-color: #FFD569;
+        box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.04);
+        border-radius: 10px;
+        margin-top: 32px;
+        margin-left: 33px;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        cursor: pointer;
+    }
+
+    .fraseMobile img {
+        margin-left: 22px;
+    }
+
+    .fraseMobile h1 {
+        font-family: var(--font);
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFF;
+        text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .fundo-modal.mostrar {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        display: flex;
+    }
+
+    .modal {
+        width: 315px;
+
+        margin: auto;
+
+
+        background: #ffffff;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+
+    }
+
+    .modal.dark {
+        background-color: #3D3D3D;
+    }
+
+    .modal.dark h1 {
+        color: #FAFAFA;
+    }
+
+    .modal.dark p {
+        color: #FAFAFA;
+    }
+
+    .modal.dark button {
+        background-color: #3D3D3D;
+    }
+
+    .modal img {
+        width: 44px;
+        height: 44px;
+        left: 50px;
+        top: 300px;
+    }
+
+    .modal h1 {
+        font-family: var(--font);
+        font-size: 12px;
+        color: #141414;
+    }
+
+    .modal p {
+        font-family: var(--font);
+        font-size: 14px;
+        color: #141414;
+    }
+
+    .modal button {
+        box-sizing: border-box;
+
+        width: 30px;
+        height: 30px;
+        left: 297px;
+        top: 308px;
+
+        background: #FFFFFF;
+        border: 2px solid #226ED8;
+        border-radius: 20px;
+    }
+
+    .modal button>span {
+        color: #226ED8;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Material Icons';
+        font-weight: 400;
+    }
+
+    .cabecalho {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+
+        position: relative;
+    }
+
+    .cabecalho h1 {
+        margin-right: 109px;
+    }
+}
+
+@media screen and (max-width:537px) {
+    .janelaTask {
+        width: 315px;
+        height: 418px;
+    }
+
+    .janelaTask button#newTask {
+        width: 255px;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .tituloTask {
+        width: 255px;
+        margin: auto;
+    }
+
+    .descricaoTask {
+        width: 255px;
+        margin: auto;
+    }
+
+    .janelaTask input#titulo {
+        width: 255px;
+    }
+
+    .janelaTask textarea#inputdesc {
+        width: 255px;
+    }
+
+    .janelaTask button#newTask {
+        width: 255px;
+    }
+
+    .headerTask {
+        width: 255px;
+        margin-left: 61px;
+    }
+
+}
+
 @media screen and (max-width:1440px) {
     .footer {
         width: 100%;
-
     }
 
     .fraseMobile {
