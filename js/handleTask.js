@@ -349,7 +349,10 @@ btnnewTask.addEventListener('click', (e) => {
     if (inputTitulo.value === '' || inputDescricao.value === '')
         alert("Preencha todos os campos!");
     else
-        addTask(inputTitulo.value, inputDescricao.value)
+        addTask(inputTitulo.value, inputDescricao.value);
+        const modal = document.querySelector(".novatask");
+        modal.classList.remove("mostrar");
 
     e.preventDefault();
 });
+
